@@ -114,8 +114,8 @@ export default function Home() {
           </div>
 
           {/* Card 4 */}
-          <div className="col-span-4 md:col-span-3 flex items-center">
-            <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden h-[400px] md:h-[600px] w-full">
+          <div className="col-span-4 md:col-span-3">
+            <div className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden h-[500px] md:h-[700px]">
               <video 
                 className="w-full h-full object-cover"
                 autoPlay 
