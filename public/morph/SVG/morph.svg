@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480.45 416.2">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: MarkPro-Book, 'Mark Pro';
+        font-size: 27.18px;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1" data-name="Capa 1">
+    <g>
+      <path class="cls-3" d="M211.02,416.2h262.82l6.6-10.91V80.94L397.05,0H0v351.97h133.11l77.91,64.23Z"/>
+      <text class="cls-1" transform="translate(330.6 388.17)"><tspan class="cls-6" x="0" y="0">P</tspan><tspan class="cls-10" x="17.58" y="0">R</tspan><tspan class="cls-7" x="35.95" y="0">I</tspan><tspan class="cls-2" x="43.65" y="0">M</tspan><tspan class="cls-5" x="69.16" y="0">A</tspan><tspan class="cls-9" x="86.35" y="0">T</tspan><tspan class="cls-12" x="102.77" y="0">E</tspan></text>
+      <text class="cls-1" transform="translate(15.08 40.78)"><tspan class="cls-8" x="0" y="0">W</tspan><tspan class="cls-12" x="29.71" y="0">E </tspan><tspan class="cls-4" x="55.65" y="0">A</tspan><tspan class="cls-11" x="75.06" y="0">R</tspan><tspan class="cls-12" x="93.44" y="0">E</tspan></text>
+    </g>
+  </g>
+</svg>
