@@ -212,7 +212,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="max-w-none mx-auto px-2.5 md:px-5 mt-10 mb-8">
-        <div className="bg-white/80 backdrop-blur-md border border-gray-300/80 rounded-3xl px-6 pt-20 md:pt-24 flex flex-col">
+        <div className="bg-white/80 backdrop-blur-md border border-gray-300/80 rounded-3xl px-8 md:px-12 pt-20 md:pt-24 flex flex-col">
           <div className="flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-5 mb-16 md:mb-20">
             {/* Logo */}
             <div className="md:col-span-2">
