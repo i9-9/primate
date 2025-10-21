@@ -203,7 +203,7 @@ export default function Home() {
                   playsInline
                   webkit-playsinline="true"
                 >
-                  <source src="/video/card3.mp4" type="video/mp4" />
+                  <source src="/video/Card3.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 z-10 p-6 flex flex-col justify-between">
                   <div></div>
