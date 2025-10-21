@@ -340,8 +340,8 @@ export default function Home() {
               <h4 className="font-sans font-bold text-xs uppercase tracking-wider mb-4 opacity-70">Contact</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="mailto:hello@primate.com" className="text-sm text-gray-900 opacity-60 hover:opacity-100 transition-opacity cursor-none leading-relaxed block">
-                    hello@primate.com
+                  <a href="mailto:info@ultimoprimate.com" className="text-sm text-gray-900 opacity-60 hover:opacity-100 transition-opacity cursor-none leading-relaxed block">
+                    info@ultimoprimate.com
                   </a>
                 </li>
                 <li>
