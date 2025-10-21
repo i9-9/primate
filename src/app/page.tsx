@@ -6,8 +6,23 @@ import Lenis from 'lenis';
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef<HTMLDivElement>(null);
   const card3VideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Detectar si es mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -94,23 +109,44 @@ export default function Home() {
                 <div className="col-span-2 md:col-span-8 flex items-center justify-end relative">
                   <button 
                     className="text-gray-600 hover:text-gray-900 transition-colors relative z-10 cursor-none group"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onClick={() => {
+                      if (isMobile) {
+                        setIsHovered(!isHovered);
+                      }
+                    }}
+                    onMouseEnter={() => {
+                      if (!isMobile) {
+                        setIsHovered(true);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (!isMobile) {
+                        setIsHovered(false);
+                      }
+                    }}
                   >
-                    <svg className="w-6 h-6 transition-transform duration-300 group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className={`w-6 h-6 transition-transform duration-300 ${isHovered ? 'rotate-45' : 'rotate-0'} md:group-hover:rotate-45`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={3} d="M12 4v16m8-8H4" />
                     </svg>
                   </button>
                   
-                  {/* Hover Expansion Div */}
+                  {/* Hover/Toggle Expansion Div */}
                   <div 
                     className={`absolute right-0 top-full mt-2 bg-black rounded-2xl transition-all duration-500 ease-out flex items-center justify-center overflow-hidden origin-top-right cursor-none ${
                       isHovered 
                         ? 'w-[300px] h-[80px] opacity-100' 
                         : 'w-0 h-0 opacity-0'
                     }`}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onMouseEnter={() => {
+                      if (!isMobile) {
+                        setIsHovered(true);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (!isMobile) {
+                        setIsHovered(false);
+                      }
+                    }}
                   >
                     <p 
                       className={`text-white text-sm font-sans px-6 text-center transition-opacity duration-300 ${
@@ -203,7 +239,7 @@ export default function Home() {
                   playsInline
                   webkit-playsinline="true"
                 >
-                  <source src="/video/Card3.mp4" type="video/mp4" />
+                  <source src="/video/card3.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 z-10 p-6 flex flex-col justify-between">
                   <div></div>
@@ -215,10 +251,10 @@ export default function Home() {
               {/* Card 3b */}
               <div className="bg-dark-gray rounded-3xl p-6 flex flex-col justify-between h-[500px] md:h-auto">
                 <div className="text-black">
-                  <p className="text-3xl font-sans font-normal leading-none">PRIMATE,</p>
-                  <p className="text-3xl font-sans font-normal leading-none">TECHNOLOGY</p>
-                  <p className="text-3xl font-sans font-normal leading-none">& CREATIVE</p>
-                  <p className="text-3xl font-sans font-normal leading-none">PRODUCTION</p>
+                  <p className="text-5xl md:text-3xl font-sans font-normal leading-none">PRIMATE,</p>
+                  <p className="text-5xl md:text-3xl font-sans font-normal leading-none">TECHNOLOGY</p>
+                  <p className="text-5xl md:text-3xl font-sans font-normal leading-none">& CREATIVE</p>
+                  <p className="text-5xl md:text-3xl font-sans font-normal leading-none">PRODUCTION</p>
                 </div>
                 <div className="text-black">
                   <div className="relative mb-2 w-full">
@@ -238,12 +274,12 @@ export default function Home() {
 
           {/* Card 4 */}
           <div className="col-span-4 md:col-span-3">
-            <div className="border border-gray-200/50 rounded-3xl overflow-hidden h-[500px] md:h-[700px] flex flex-col relative" style={{ backgroundColor: '#e2e3e4' }}>
+            <div className="border border-gray-200/50 rounded-3xl overflow-hidden h-[700px] md:h-[700px] flex flex-col relative" style={{ backgroundColor: '#e2e3e4' }}>
               {/* Forma usando SVG externo */}
-              <div className="relative m-4 md:m-6 h-[35%] md:h-[40%]">
+              <div className="relative m-4 md:m-6 h-[30%] md:h-[40%]">
                 <Image
                   src="/morph/SVG/morph.svg"
-                  alt="Paper shape"
+                  alt="Primate morphology"
                   fill
                   className="object-fill"
                 />
@@ -275,7 +311,7 @@ export default function Home() {
             {/* Logo y descripción */}
             <div className="md:w-2/5">
               <Image
-                src="/assets/SVG/primate-logo.svg"
+                src="/logo/logo_footer.svg"
                 alt="Primate Logo"
                 width={200}
                 height={60}
