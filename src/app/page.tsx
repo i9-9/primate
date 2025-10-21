@@ -147,7 +147,7 @@ export default function Home() {
             <div className="grid grid-cols-1 grid-rows-2 gap-2.5 md:gap-5 md:h-[700px]">
               {/* Card 3a */}
               <div 
-                className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden relative p-6 cursor-none h-[500px] md:h-auto"
+                className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden relative cursor-none h-[500px] md:h-auto"
                 onMouseEnter={() => {
                   if (card3VideoRef.current && window.innerWidth >= 768) {
                     card3VideoRef.current.play();
@@ -162,14 +162,15 @@ export default function Home() {
               >
                 <video
                   ref={card3VideoRef}
-                  className="w-full h-full object-cover object-top absolute inset-0"
+                  className="absolute inset-0 w-full h-full object-cover object-top z-0"
                   loop
                   muted
                   playsInline
+                  webkit-playsinline="true"
                 >
                   <source src="/video/card3.mp4" type="video/mp4" />
                 </video>
-                <div className="relative z-10 flex flex-col justify-between h-full">
+                <div className="absolute inset-0 z-10 p-6 flex flex-col justify-between">
                   <div></div>
                   <div>
                     <p className="text-white font-sans font-bold text-2xl uppercase">PRIMATE.COM</p>

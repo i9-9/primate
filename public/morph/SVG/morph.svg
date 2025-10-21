@@ -3,60 +3,29 @@
   <defs>
     <style>
       .cls-1 {
-        font-family: MarkPro-Book, 'Mark Pro';
-        font-size: 27.18px;
-      }
-
-      .cls-2 {
-        letter-spacing: 0em;
-      }
-
-      .cls-3 {
         fill: #fff;
-      }
-
-      .cls-4 {
-        letter-spacing: 0em;
-      }
-
-      .cls-5 {
-        letter-spacing: -.08em;
-      }
-
-      .cls-6 {
-        letter-spacing: -.02em;
-      }
-
-      .cls-7 {
-        letter-spacing: 0em;
-      }
-
-      .cls-8 {
-        letter-spacing: 0em;
-      }
-
-      .cls-9 {
-        letter-spacing: 0em;
-      }
-
-      .cls-10 {
-        letter-spacing: 0em;
-      }
-
-      .cls-11 {
-        letter-spacing: 0em;
-      }
-
-      .cls-12 {
-        letter-spacing: 0em;
       }
     </style>
   </defs>
   <g id="Capa_1" data-name="Capa 1">
     <g>
-      <path class="cls-3" d="M211.02,416.2h262.82l6.6-10.91V80.94L397.05,0H0v351.97h133.11l77.91,64.23Z"/>
-      <text class="cls-1" transform="translate(330.6 388.17)"><tspan class="cls-6" x="0" y="0">P</tspan><tspan class="cls-10" x="17.58" y="0">R</tspan><tspan class="cls-7" x="35.95" y="0">I</tspan><tspan class="cls-2" x="43.65" y="0">M</tspan><tspan class="cls-5" x="69.16" y="0">A</tspan><tspan class="cls-9" x="86.35" y="0">T</tspan><tspan class="cls-12" x="102.77" y="0">E</tspan></text>
-      <text class="cls-1" transform="translate(15.08 40.78)"><tspan class="cls-8" x="0" y="0">W</tspan><tspan class="cls-12" x="29.71" y="0">E </tspan><tspan class="cls-4" x="55.65" y="0">A</tspan><tspan class="cls-11" x="75.06" y="0">R</tspan><tspan class="cls-12" x="93.44" y="0">E</tspan></text>
+      <path class="cls-1" d="M211.02,416.2h262.82l6.6-10.91V80.94L397.05,0H0v351.97h133.11l77.91,64.23Z"/>
+      <g>
+        <path d="M335.7,380.55v7.61h-2.39v-19.03h7.23c4.3,0,6.73,2.15,6.73,5.71s-2.43,5.71-6.73,5.71h-4.84ZM335.7,371.39v6.91h4.79c2.81,0,4.3-1.14,4.3-3.45s-1.48-3.45-4.3-3.45h-4.79Z"/>
+        <path d="M358.45,369.13c4.3,0,6.66,1.93,6.66,5.4s-2.57,5.42-6.65,5.42h-.15l6.7,8.21h-2.96l-6.54-8.21h-2.23v8.21h-2.39v-19.03h7.56ZM353.28,371.38v6.4h5.11c2.8,0,4.23-1.12,4.23-3.25s-1.47-3.15-4.23-3.15h-5.11Z"/>
+        <path d="M371.65,388.17h-2.39v-19.03h2.39v19.03Z"/>
+        <path d="M397.02,388.17h-2.39v-16.38l-6.38,14.33h-2.53l-6.38-14.22v16.27h-2.39v-19.05h3.66l6.38,14.21,6.38-14.21h3.66v19.05Z"/>
+        <path d="M418.7,388.17h-2.57l-2.09-5.19h-9.23l-2.08,5.19h-2.49l7.74-19.03h2.98l7.75,19.03ZM405.72,380.7h7.41l-3.7-9.2-3.71,9.2Z"/>
+        <path d="M432.88,371.4h-6.49v16.76h-2.39v-16.76h-6.5v-2.27h15.38v2.27Z"/>
+        <path d="M449.59,388.17h-13.51v-19.03h13.38v2.24h-10.99v6.08h10.63v2.26h-10.63v6.21h11.12v2.24Z"/>
+      </g>
+      <g>
+        <path d="M38.06,40.8h-2.96l-5.1-15.89-5.1,15.89h-2.95l-6.11-19.05h2.52l5.1,16.34,5.21-16.36h2.72l5.22,16.36,5.08-16.34h2.46l-6.09,19.05Z"/>
+        <path d="M61.01,40.78h-13.51v-19.03h13.38v2.24h-10.98v6.08h10.63v2.26h-10.63v6.21h11.12v2.24Z"/>
+        <path d="M89.66,40.78h-2.57l-2.09-5.19h-9.23l-2.08,5.19h-2.49l7.74-19.03h2.98l7.75,19.03ZM76.68,33.32h7.41l-3.7-9.2-3.71,9.2Z"/>
+        <path d="M100.41,21.75c4.3,0,6.66,1.93,6.66,5.4s-2.57,5.42-6.65,5.42h-.15l6.7,8.21h-2.96l-6.54-8.21h-2.23v8.21h-2.39v-19.03h7.56ZM95.24,23.99v6.4h5.11c2.8,0,4.23-1.12,4.23-3.25s-1.47-3.15-4.23-3.15h-5.11Z"/>
+        <path d="M124.74,40.78h-13.51v-19.03h13.38v2.24h-10.99v6.08h10.63v2.26h-10.63v6.21h11.12v2.24Z"/>
+      </g>
     </g>
   </g>
 </svg>
