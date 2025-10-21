@@ -287,29 +287,26 @@ export default function Home() {
 
           {/* Card 4 */}
           <div className="col-span-4 md:col-span-3">
-            <div className="border border-gray-200/50 rounded-3xl overflow-hidden h-[700px] md:h-[700px] flex flex-col relative" style={{ backgroundColor: '#e2e3e4' }}>
-              {/* Forma usando SVG externo */}
-              <div className="relative m-4 md:m-6 h-[30%] md:h-[40%]">
+            <div className="border border-gray-200/50 rounded-3xl overflow-hidden h-[700px] md:h-[700px] relative">
+              {/* Video full height */}
+              <video 
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              >
+                <source src="/video/monk_2.mp4" type="video/mp4" />
+              </video>
+              
+              {/* Forma SVG superpuesta */}
+              <div className="absolute top-0 left-0 right-0 m-4 md:m-6 h-[30%] md:h-[40%] z-10 pointer-events-none">
                 <Image
                   src="/morph/SVG/morph.svg"
                   alt="Primate morphology"
                   fill
                   className="object-fill"
                 />
-                
-              </div>
-              
-              {/* Video en la parte inferior */}
-              <div className="flex-1 rounded-t-2xl overflow-hidden">
-                <video 
-                  className="w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                >
-                  <source src="/video/monkey.mp4" type="video/mp4" />
-                </video>
               </div>
             </div>
           </div>
