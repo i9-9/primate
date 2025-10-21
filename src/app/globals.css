@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'lenis/dist/lenis.css';
 
 @theme inline {
   --font-sans: var(--font-ff-mark-pro);
@@ -11,6 +12,10 @@
   --color-medium-gray: #A6A49C;
   --color-dark-gray: #7E7E7E;
   --color-black: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

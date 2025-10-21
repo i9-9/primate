@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import Lenis from 'lenis';
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -41,6 +42,27 @@ export default function Home() {
 
     return () => {
       window.removeEventListener('resize', handleVideoPlayback);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Inicializar Lenis para smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
     };
   }, []);
 
