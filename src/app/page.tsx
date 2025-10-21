@@ -44,6 +44,15 @@ export default function Home() {
     const handleVideoPlayback = async () => {
       if (card3VideoRef.current) {
         const video = card3VideoRef.current;
+        
+        // Esperar a que el video esté listo
+        if (video.readyState < 3) {
+          video.addEventListener('canplay', () => {
+            handleVideoPlayback();
+          }, { once: true });
+          return;
+        }
+        
         if (window.innerWidth < 768) {
           try {
             await video.play();
@@ -393,7 +402,7 @@ export default function Home() {
         }}
       >
         {/* Borde sólido */}
-        <div className="absolute w-5 h-5 rounded-full border border-white mix-blend-difference" />
+        <div className="absolute w-5 h-5 rounded-full border-2 border-black mix-blend-difference" />
         {/* Interior blureado */}
         <div 
           className="absolute w-5 h-5 rounded-full bg-white/20 mix-blend-difference"
