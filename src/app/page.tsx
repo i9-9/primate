@@ -287,7 +287,7 @@ export default function Home() {
 
           {/* Card 4 */}
           <div className="col-span-4 md:col-span-3">
-            <div className="border border-gray-200/50 rounded-3xl overflow-hidden h-[700px] md:h-[700px] relative">
+            <div className="border border-gray-200/50 rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:h-[700px] relative">
               {/* Video full height */}
               <video 
                 className="absolute inset-0 w-full h-full object-cover"
@@ -300,7 +300,7 @@ export default function Home() {
               </video>
               
               {/* Forma SVG superpuesta */}
-              <div className="absolute top-0 left-0 right-0 m-4 md:m-6 h-[30%] md:h-[40%] z-10 pointer-events-none">
+              <div className="absolute top-0 left-0 right-0 m-4 md:m-6 h-[50%] md:h-[40%] z-10 pointer-events-none">
                 <Image
                   src="/morph/SVG/morph.svg"
                   alt="Primate morphology"
