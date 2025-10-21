@@ -8,7 +8,7 @@ export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const card3VideoRef = useRef<HTMLVideoElement>(null);
+  const promoVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Detectar si es mobile
@@ -41,38 +41,41 @@ export default function Home() {
 
   useEffect(() => {
     // Autoplay en mobile, pausado en desktop
-    const handleVideoPlayback = async () => {
-      if (card3VideoRef.current) {
-        const video = card3VideoRef.current;
-        
-        // Esperar a que el video esté listo
-        if (video.readyState < 3) {
-          video.addEventListener('canplay', () => {
-            handleVideoPlayback();
-          }, { once: true });
-          return;
-        }
-        
-        if (window.innerWidth < 768) {
-          try {
-            await video.play();
-          } catch {
-            // Ignorar errores de play interrumpido
-          }
-        } else {
-          if (!video.paused) {
-            video.pause();
-          }
-          video.currentTime = 0;
-        }
+    const video = promoVideoRef.current;
+    if (!video) return;
+
+    const handleLoadedData = () => {
+      if (window.innerWidth < 768) {
+        video.play().catch(() => {
+          // Silenciar errores de autoplay
+        });
+      } else {
+        video.pause();
+        video.currentTime = 0;
       }
     };
 
-    handleVideoPlayback();
-    window.addEventListener('resize', handleVideoPlayback);
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    };
+
+    // Esperar a que el video esté listo
+    if (video.readyState >= 3) {
+      handleLoadedData();
+    } else {
+      video.addEventListener('loadeddata', handleLoadedData, { once: true });
+    }
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleVideoPlayback);
+      window.removeEventListener('resize', handleResize);
+      video.removeEventListener('loadeddata', handleLoadedData);
     };
   }, []);
 
@@ -223,16 +226,16 @@ export default function Home() {
               <div 
                 className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden relative cursor-none h-[500px] md:h-auto"
                 onMouseEnter={() => {
-                  if (card3VideoRef.current && window.innerWidth >= 768) {
-                    const video = card3VideoRef.current;
+                  if (promoVideoRef.current && window.innerWidth >= 768) {
+                    const video = promoVideoRef.current;
                     video.play().catch(() => {
                       // Ignorar errores de play
                     });
                   }
                 }}
                 onMouseLeave={() => {
-                  if (card3VideoRef.current && window.innerWidth >= 768) {
-                    const video = card3VideoRef.current;
+                  if (promoVideoRef.current && window.innerWidth >= 768) {
+                    const video = promoVideoRef.current;
                     if (!video.paused) {
                       video.pause();
                     }
@@ -241,14 +244,15 @@ export default function Home() {
                 }}
               >
                 <video
-                  ref={card3VideoRef}
+                  ref={promoVideoRef}
                   className="absolute inset-0 w-full h-full object-cover object-top z-0"
                   loop
                   muted
                   playsInline
+                  preload="auto"
                   webkit-playsinline="true"
                 >
-                  <source src="/video/card3.mp4" type="video/mp4" />
+                  <source src="/video/promo-video.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 z-10 p-6 flex flex-col justify-between">
                   <div></div>
