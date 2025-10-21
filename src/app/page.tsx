@@ -23,14 +23,35 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    // Autoplay en mobile, pausado en desktop
+    const handleVideoPlayback = () => {
+      if (card3VideoRef.current) {
+        if (window.innerWidth < 768) {
+          card3VideoRef.current.play();
+        } else {
+          card3VideoRef.current.pause();
+          card3VideoRef.current.currentTime = 0;
+        }
+      }
+    };
+
+    handleVideoPlayback();
+    window.addEventListener('resize', handleVideoPlayback);
+
+    return () => {
+      window.removeEventListener('resize', handleVideoPlayback);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen cursor-none">
       {/* Navbar */}
       <nav className="sticky top-0 z-50">
         <div className="max-w-none mx-auto px-2.5 md:px-5 py-4">
           <div className="grid grid-cols-4 md:grid-cols-12 gap-2.5 md:gap-5">
-            <div className="col-span-4 md:col-span-1"></div>
-            <div className="col-span-4 md:col-span-10 bg-white/50 backdrop-blur-md border border-gray-300/80 rounded-3xl px-6 py-4">
+            <div className="col-span-1 md:col-span-1"></div>
+            <div className="col-span-2 md:col-span-10 bg-white/50 backdrop-blur-md border border-gray-300/80 rounded-3xl px-6 py-4">
               <div className="grid grid-cols-4 md:grid-cols-10 gap-2.5 md:gap-5">
                 <div className="col-span-2 md:col-span-2 flex items-center">
                   <Image
@@ -73,7 +94,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-span-4 md:col-span-1"></div>
+            <div className="col-span-1 md:col-span-1"></div>
           </div>
         </div>
       </nav>
@@ -123,17 +144,17 @@ export default function Home() {
 
           {/* Cards 3 y 4 - Dos cards pequeñas */}
           <div className="col-span-4 md:col-span-3">
-            <div className="grid grid-cols-1 grid-rows-2 gap-2.5 md:gap-5 h-[500px] md:h-[700px]">
+            <div className="grid grid-cols-1 grid-rows-2 gap-2.5 md:gap-5 md:h-[700px]">
               {/* Card 3a */}
               <div 
-                className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden relative p-6 cursor-none"
+                className="bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-3xl overflow-hidden relative p-6 cursor-none h-[500px] md:h-auto"
                 onMouseEnter={() => {
-                  if (card3VideoRef.current) {
+                  if (card3VideoRef.current && window.innerWidth >= 768) {
                     card3VideoRef.current.play();
                   }
                 }}
                 onMouseLeave={() => {
-                  if (card3VideoRef.current) {
+                  if (card3VideoRef.current && window.innerWidth >= 768) {
                     card3VideoRef.current.pause();
                     card3VideoRef.current.currentTime = 0;
                   }
@@ -156,7 +177,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Card 3b */}
-              <div className="bg-dark-gray rounded-3xl p-6 flex flex-col justify-between">
+              <div className="bg-dark-gray rounded-3xl p-6 flex flex-col justify-between h-[500px] md:h-auto">
                 <div className="text-black">
                   <p className="text-3xl font-sans font-normal leading-none">PRIMATE,</p>
                   <p className="text-3xl font-sans font-normal leading-none">TECHNOLOGY</p>
@@ -233,7 +254,7 @@ export default function Home() {
 
             {/* Links */}
             <div className="md:col-span-6">
-              <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-4">
+              <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-4 py-8 md:py-0">
                 <div>
                   <h4 className="font-sans font-bold text-xs uppercase tracking-wider mb-4 opacity-70">Company</h4>
                   <ul className="space-y-1">

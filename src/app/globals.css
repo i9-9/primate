@@ -16,3 +16,14 @@
 body {
   font-family: var(--font-ff-mark-pro), system-ui, -apple-system, sans-serif;
 }
+
+/* Text Selection Styles */
+::selection {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
